@@ -28,7 +28,7 @@ Go to Charitable > Settings > Advanced and enter your Site Key and Secret Key in
 
 You can disable reCAPTCHA for one or more forms with the `charitable_recaptcha_forms` filter.
 
-...
+```
 /**
  * Disable reCAPTCHA for one or more forms.
  *
