@@ -50,19 +50,7 @@ You can disable reCAPTCHA for one or more forms with the `charitable_recaptcha_f
  */
 function ed_charitable_disable_recaptcha_on_form( $forms ) {
 	/**
-	 * Disable reCAPTCHA for one or more forms.
-	 *
-	 * reCAPTCHA is enabled for all forms by default.
-	 *
-	 * Form keys to use:
-	 *
-	 * donation_form
-	 * donation_amount_form
-	 * registration_form
-	 * password_reset_form
-	 * password_retrieval_form
-	 * profile_form
-	 * campaign_form -- Front-end campaign submission form available with Ambassadors.
+	 * In this example, we're disabling reCAPTCHA for the donation form and profile form.
 	 */
 	$forms['donation_form'] = false;
 	$forms['profile_form'] = false;
