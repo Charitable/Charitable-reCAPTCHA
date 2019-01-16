@@ -30,7 +30,7 @@ if ( ! class_exists( 'Charitable_ReCAPTCHA_Form' ) ) :
 		 * @since 1.0.0
 		 */
 		public function __construct() {
-			add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ), 15 );
 			add_action( 'charitable_form_after_fields', array( $this, 'add_invisible_div' ) );
 
 			/**
@@ -67,6 +67,17 @@ if ( ! class_exists( 'Charitable_ReCAPTCHA_Form' ) ) :
 			wp_localize_script( 'charitable-recaptcha', 'CHARITABLE_RECAPTCHA', array(
 				'site_key' => charitable_get_option( 'recaptcha_site_key' ),
 			) );
+
+			if ( class_exists( 'Charitable_Stripe' ) && version_compare( Charitable_Stripe::VERSION, '1.3.0', '<' ) ) {
+				$wp_scripts = wp_scripts();
+
+				if ( isset( $wp_scripts->registered['charitable-stripe-handler'] ) ) {
+					$script      = $wp_scripts->registered['charitable-stripe-handler'];
+					$script->src = $dir . 'stripe/charitable-stripe-handler.js';
+
+					$wp_scripts->registered['charitable-stripe-handler'] = $script;
+				}
+			}
 		}
 
 		/**
