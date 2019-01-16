@@ -60,7 +60,7 @@ if ( ! class_exists( 'Charitable_ReCAPTCHA_Form' ) ) :
 		public function add_scripts() {
 			$dir = plugin_dir_url( __FILE__ ) . 'assets/';
 
-			wp_register_script( 'charitable-recaptcha', $dir . 'charitable-recaptcha-handler.js' );
+			wp_register_script( 'charitable-recaptcha', $dir . 'charitable-recaptcha-handler.js', array( 'jquery-core' ) );
 
 			wp_enqueue_script( 'charitable-recaptcha' );
 
@@ -206,6 +206,8 @@ if ( ! class_exists( 'Charitable_ReCAPTCHA_Form' ) ) :
 		 */
 		public function add_invisible_div( Charitable_Form $form ) {
 			if ( $this->is_enabled_for_form( $this->get_current_form_from_class( $form ) ) ) {
+				echo '<div class="charitable-recaptcha"></div>';
+				echo '<input type="hidden" name="grecaptcha_token" value="" />';
 				echo '<script src="https://www.google.com/recaptcha/api.js?onload=charitable_reCAPTCHA_onload&render=explicit" async defer></script>';
 			}
 		}
