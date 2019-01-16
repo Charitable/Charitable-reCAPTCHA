@@ -4,6 +4,11 @@ Block bots.
 
 Use Google reCAPTCHA v2 Invisible to challenge suspicious form submissions on Charitable forms.
 
+## Minimum requirements
+
+- Charitable 1.6.9+
+- PHP 5.3+
+
 ## Usage
 
 After installing and activating this plugin, you need to add your Site Key and Secret Key to enable the plugin. Once you have done this, reCAPTCHA Invisible will automatically be enabled for all your Charitable forms (donation form, login, registration, etc.).
