@@ -97,15 +97,18 @@ if ( ! class_exists( 'Charitable_ReCAPTCHA_Form' ) ) :
 			 * @param array $forms All the supported forms in a key=>value array, where the value is either
 			 *                     true (reCAPTCHA is enabled) or false (reCAPTCHA is disabled).
 			 */
-			return apply_filters( 'charitable_recaptcha_forms', array(
-				'donation_form'           => true,
-				'donation_amount_form'    => true,
-				'registration_form'       => true,
-				'password_reset_form'     => true,
-				'password_retrieval_form' => true,
-				'profile_form'            => true,
-				'campaign_form'           => true,
-			) );
+			return apply_filters(
+				'charitable_recaptcha_forms',
+				array(
+					'donation_form'           => true,
+					'donation_amount_form'    => false,
+					'registration_form'       => true,
+					'password_reset_form'     => true,
+					'password_retrieval_form' => true,
+					'profile_form'            => true,
+					'campaign_form'           => true,
+				)
+			);
 		}
 
 		/**
