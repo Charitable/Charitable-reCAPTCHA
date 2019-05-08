@@ -17,8 +17,8 @@ var charitable_reCAPTCHA_onload = function() {
 			if ( helper.__proto__.hasOwnProperty( 'remove_pending_process_by_name' ) ) {
 				process_id = helper.remove_pending_process_by_name( 'recaptcha' );
 			} else {
-				var index = this.pending_processes.indexOf( process );
-        		return -1 !== index && this.remove_pending_process( index );
+				var index = helper.pending_processes.indexOf( 'recaptcha' );
+        		return -1 !== index && helper.remove_pending_process( index );
 			}
 		}
 
