@@ -105,7 +105,7 @@ if ( ! class_exists( 'Charitable_ReCAPTCHA_Form' ) ) :
 					'registration_form'       => true,
 					'password_reset_form'     => true,
 					'password_retrieval_form' => true,
-					'profile_form'            => true,
+					'profile_form'            => false,
 					'campaign_form'           => true,
 				)
 			);
