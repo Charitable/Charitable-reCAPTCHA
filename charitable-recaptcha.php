@@ -3,11 +3,11 @@
  * Plugin Name:       Charitable - reCAPTCHA
  * Plugin URI:        https://github.com/Charitable/Charitable-reCAPTCHA
  * Description:       Block bots. Add Invisible reCAPTCHA to Charitable's donation, registration, profile, password reset & retrieval forms.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Author:            WP Charitable
  * Author URI:        https://www.wpcharitable.com
  * Requires at least: 4.5
- * Tested up to:      5.1.1
+ * Tested up to:      5.2.2
  *
  * Text Domain:       charitable-recaptcha
  * Domain Path:       /languages/
@@ -24,6 +24,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_action(
 	'plugins_loaded',
 	function() {
+
+		/**
+		 * Check that Charitable is installed.
+		 */
+		if ( ! class_exists( 'Charitable' ) ) {
+			return;
+		}
 
 		/**
 		 * Load required files.
