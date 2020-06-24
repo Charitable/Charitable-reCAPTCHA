@@ -3,7 +3,7 @@ var charitable_reCAPTCHA_onload = function() {
 	( function( $ ) {
 		var $body      = $( 'body' );
 		var $recaptcha = $( '.charitable-recaptcha' );
-		var input      = $recaptcha[0].nextSibling;
+		var input      = $recaptcha.parent().find( '[name=grecaptcha_token]')[0];
 		var form       = input.form;
 		var recaptcha_id;
 
