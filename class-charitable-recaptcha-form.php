@@ -60,7 +60,7 @@ if ( ! class_exists( 'Charitable_ReCAPTCHA_Form' ) ) :
 		public function add_scripts() {
 			$dir = plugin_dir_url( __FILE__ ) . 'assets/';
 
-			wp_register_script( 'charitable-recaptcha', $dir . 'charitable-recaptcha-handler.js', array( 'jquery-core' ) );
+			wp_register_script( 'charitable-recaptcha', $dir . 'charitable-recaptcha-handler.js', array( 'jquery' ) );
 
 			wp_enqueue_script( 'charitable-recaptcha' );
 
